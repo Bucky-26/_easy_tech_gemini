@@ -1,0 +1,20 @@
+{
+  "name": "easy-api-gemini",
+  "version": "1.0.0",
+  "description": "Easy Tech AI Gemini AI API",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.mjs",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bucky-26/_easy_tech_gemini.git"
+  },
+  "author": "ADONIS DEV",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Bucky-26/_easy_tech_gemini/issues"
+  },
+  "homepage": "https://github.com/Bucky-26/_easy_tech_gemini#readme"
+}
