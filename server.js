@@ -1,29 +1,28 @@
 const express = require("express");
 const axios = require("axios");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
 const fs = require("fs").promises; // Use fs.promises for asynchronous file operations
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const app = express();
 const port = process.env.PORT || 400;
 
-const genAI = new GoogleGenerativeAI('AIzaSyALP6y2MzGvxaErwgUGFXmxiZ2S1Sl-fRE');
+const genAI = new GoogleGenerativeAI('AIzaSyBjgcXl2KmU19wNE4iPxopVvuF7CCVp_VY');
 
-app.use(express.json({ limit: 'Infinity' })); // Remove payload size limit
-
-async function streamToGenerativePart(imageBase64, mimeType) {
+async function fileToGenerativePart(data, mimeType) {
   try {
-    const stream = Buffer.from(imageBase64, 'base64').toString('utf8');
     return {
       inlineData: {
-        data: stream,
+        data,
         mimeType,
       },
     };
   } catch (error) {
-    console.error("Error streaming image data:", error.message);
+    console.error("Error reading file:", error.message);
     throw error;
   }
 }
+
+app.use(express.json({ limit: '50mb' })); // Set a higher payload size limit (adjust the limit accordingly)
 
 app.post("/v1/completion", async (req, res) => {
   try {
@@ -39,7 +38,7 @@ app.post("/v1/completion", async (req, res) => {
         if (imageBase64) {
           try {
             const mimeType = "image/jpeg"; // Change the mimeType based on your use case
-            return await streamToGenerativePart(imageBase64, mimeType);
+            return await fileToGenerativePart(imageBase64, mimeType);
           } catch (conversionError) {
             console.error("Error converting base64 to generative part:", conversionError.message);
             return null;

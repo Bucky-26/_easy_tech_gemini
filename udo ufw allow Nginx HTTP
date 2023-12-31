@@ -1,0 +1,11 @@
+[0;1;31m●[0m nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled; vendor preset: enabled)
+     Active: [0;1;31mfailed[0m (Result: exit-code) since Sun 2023-12-31 15:07:25 PST; 1min 15s ago
+       Docs: man:nginx(8)
+
+Dec 31 15:07:25 easy-server systemd[1]: Starting A high performance web server and a reverse proxy server...
+Dec 31 15:07:25 easy-server nginx[46899]: nginx: [emerg] open() "/etc/nginx/sites-enabled/filebrowser" failed (2: No such file or directory) in /etc/nginx/nginx.conf:62
+Dec 31 15:07:25 easy-server nginx[46899]: nginx: configuration file /etc/nginx/nginx.conf test failed
+Dec 31 15:07:25 easy-server systemd[1]: [0;1;39m[0;1;31m[0;1;39mnginx.service: Control process exited, code=exited, status=1/FAILURE[0m
+Dec 31 15:07:25 easy-server systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185mnginx.service: Failed with result 'exit-code'.[0m
+Dec 31 15:07:25 easy-server systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start A high performance web server and a reverse proxy server.[0m

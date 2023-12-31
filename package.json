@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Bucky-26/_easy_tech_gemini/issues"
   },
-  "homepage": "https://github.com/Bucky-26/_easy_tech_gemini#readme"
+  "homepage": "https://github.com/Bucky-26/_easy_tech_gemini#readme",
+  "dependencies": {
+    "@google/generative-ai": "^0.1.3",
+    "axios": "^1.6.3",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security"
+  }
 }
