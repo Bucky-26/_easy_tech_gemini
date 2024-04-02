@@ -6,7 +6,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const app = express();
 const port = process.env.PORT || 400;
 
-const genAI = new GoogleGenerativeAI('AIzaSyBjgcXl2KmU19wNE4iPxopVvuF7CCVp_VY');
+const genAI = new GoogleGenerativeAI('AIzaSyD0iM5r2wktgW5FfNDhe6VJNvXzetiyjdA');
 
 async function fileToGenerativePart(data, mimeType) {
   try {
@@ -64,7 +64,7 @@ app.post("/v1/completion", async (req, res) => {
     });
   } catch (error) {
     console.error("Unhandled error:", error.message);
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(500).json({ error: error.message });
   }
 });
 
