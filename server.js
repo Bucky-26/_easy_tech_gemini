@@ -6,7 +6,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const app = express();
 const port = process.env.PORT || 400;
 
-const genAI = new GoogleGenerativeAI('AIzaSyD0iM5r2wktgW5FfNDhe6VJNvXzetiyjdA');
+const genAI = new GoogleGenerativeAI('AIzaSyBcFpqFjt0FgACAGkrveyxh_ulbcSowo40');
 
 async function fileToGenerativePart(data, mimeType) {
   try {
