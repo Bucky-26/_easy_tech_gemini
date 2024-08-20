@@ -50,7 +50,7 @@ app.post("/v1/completion", async (req, res) => {
 
     const validImageParts = imageParts.filter((part) => part !== null);
 
-    const modelName = validImageParts.length > 0 ? "gemini-pro-vision" : "gemini-pro";
+    const modelName = validImageParts.length > 0 ? "gemini-1.5-pro" : "gemini-pro";
     const model = genAI.getGenerativeModel({ model: modelName });
 
     const result = await model.generateContent([text, ...validImageParts]);
